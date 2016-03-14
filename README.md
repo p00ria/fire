@@ -21,7 +21,7 @@
 * **And more!**
 
 **Table of Contents**
-- [RedBot](#teleseed)
+- [RedBot](#RedBot)
 - [Features](#features)
 - [Commands](#commands)
 	- [Admins commands](#admins-commands)
@@ -81,9 +81,6 @@
 - [Installation](#installation)
 	- [One command](#one-command)
 	- [Realm configuration](#realm-configuration)
-- [Support and development](#support-and-development)
-- [Special thanks to:](#special-thanks-to)
-- [Our team!](#our-team)
 
 
 # Commands
@@ -92,7 +89,7 @@
 ### Group creation
 >[!/]creategroup [group name]
 >
->>[!/]creategroup SEED
+>>[!/]creategroup Red
 >>>will create a group
 >>>
 >>>_Only works in realms for admins but, sudo users can use it everywhere_
@@ -100,7 +97,7 @@
 ### Realm creation
 >[!/]createrealm [realm name]
 >
->>[!/]createrealm SEED
+>>[!/]createrealm Red
 >>>will create a realm
 >>>
 >>>_Only works in realms for admins but, sudo users can use it everywhere_
@@ -140,7 +137,7 @@
 
 ### Setting group name in realm
 > [!/]setname [group_id] [text]
->>[!/]setname 123456789 SEED
+>>[!/]setname 123456789 Red
 >>>This command will set [text] as name of [group_id]
 
 ### Setting rules in realm
@@ -254,15 +251,15 @@ _Sudo users and admins can also use this commands in all groups_
 >[!/]banlist
 >>This command will return bans list
 
-### group name|member|arabic|flood|bots lock
->[!/]lock [name|member|arabic|flood|bots]
+### group name|member|arabic|flood|bots|leave|ads|join|chat lock
+>[!/]lock [name|member|arabic|flood|bots|leave|ads|join|chat]
 >>[!/]lock flood
->>>This command will lock name|member|arabic|flood|bots of groups
+>>>This command will lock name|member|arabic|flood|bots|leave|ads|join|chat of groups
 
-### group name|member|arabic|flood|bots unlock
->[!/]unlock [name|member|arabic|flood|bots]
+### group name|member|arabic|flood|bots|leave|ads|join|chat unlock
+>[!/]unlock [name|member|arabic|flood|bots|leave|ads|join|chat]
 >>[!/]unlock flood
->>>This command will unlock name|member|arabic|flood|bots of groups
+>>>This command will unlock name|member|arabic|flood|bots|leave|ads|join|chat of groups
 
 ### Group modlist|rules|about|member clean
 >[!/]clean [modlist|rules|about|member]
@@ -439,8 +436,8 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 
 # Let's install the bot.
 cd $HOME
-git clone https://github.com/SEEDTEAM/TeleSeed.git
-cd TeleSeed
+git clone https://github.com/p00ria/RedBot.git
+cd RedBot
 chmod +x launch.sh
 ./launch.sh install
 ./launch.sh # Enter a phone number & confirmation code.
@@ -449,7 +446,7 @@ chmod +x launch.sh
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 ```sh
 #https://github.com/yagop/telegram-bot/wiki/Installation
-sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/SEEDTEAM/TeleSeed.git && cd TeleSeed && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/p00ria/RedBot.git && cd RedBot && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 ```
 ### Realm configuration
 
@@ -458,9 +455,9 @@ After you run the bot for first time, send it `!id`. Get your ID and stop the bo
 Open ./data/config.lua and add your ID to the "sudo_users" section in the following format:
 ```
   sudo_users = {
-    110626080,
-    103649648,
-    111020322,
+    175636120,
+    150289672,
+    177178194,
     0,
     YourID
   }
@@ -473,34 +470,7 @@ Create a realm using the `!createrealm` command.
 
 Check out this [tutorial by Telegram Geeks](http://telegramgeeks.com/2016/01/teleseed-tutorial/) for further assistance with setup and installation.
 
-**Do not contact us** in private for support.
-Join our bot development group by sending `/join 56670147` to [@TeleSeed](https://telegram.me/TeleSeed)
-
-# Special thanks to
-[@seyedan25](https://telegram.me/seyedan25)
-
-For managing [@teleseed](https://telegram.me/TeleSeed) on Telegram.
-
-[@Vamptacus](https://telegram.me/Vamptacus)
-
-For graphic designs.
-
-[topkecleon](https://github.com/topkecleon)
-
-[Juan Potato](https://github.com/JuanPotato)
-
-# Our team!
-
-[Alphonse](https://github.com/hmon) ([Telegram](https://telegram.me/iwals))
-
-[I M /-\ N](https://github.com/imandaneshi) ([Telegram](https://telegram.me/imandaneshi))
-
-[Siyanew](https://github.com/Siyanew) ([Telegram](https://telegram.me/Siyanew))
-
-[Rondoozle](https://github.com/Rondoozle) ([Telegram](https://telegram.me/POTUS))
-
 ###Our Telegram channels:
 
-English: [@TeleSeedCH](https://telegram.me/teleseedch)
+[@RedBot_CH](https://telegram.me/RedBot_CH)
 
-Persian: [@IranSeed](https://telegram.me/iranseed)
