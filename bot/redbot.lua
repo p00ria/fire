@@ -4,7 +4,7 @@ package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
 require("./bot/utils")
 
-VERSION = '2'
+VERSION = '1'
 
 -- This function is called when tg receive a msg
 function on_msg_receive (msg)
@@ -208,48 +208,84 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "onservice",
-    "inrealm",
-    "ingroup",
-    "inpm",
-    "banhammer",
-    "stats",
-    "anti_spam",
-    "owners",
-    "arabic_lock",
-    "set",
-    "get",
-    "broadcast",
-    "download_media",
-    "invite",
-    "all",
-    "leave_ban",
-    "admin"
+    "Add_Bot"
+    "Add-Plugin"
+    "Admin"
+    "All"
+    "Anti_Link"
+    "Anti_Spam"
+    "Anti_Tag"
+    "Arabic_Lock"
+    "Auto_Leave"
+    "Banhammer"
+    "Bin"
+    "Block"
+    "Bot_Number"
+    "Bot_On_Off"
+    "Broadcast"
+    "Calculator"
+    "Chat"
+    "Cpu"
+    "Download_Media"
+    "Echo"
+    "Expire"
+    "Feedback"
+    "Filter"
+    "Fosh"
+    "GPS"
+    "Get"
+    "Get_Plugins"
+    "Gif"
+    "Google"
+    "Google_Image"
+    "Info"
+    "Ingroup"
+    "Inpm"
+    "Inrealm"
+    "Invite"
+    "Leave_Ban"
+    "Link_Pv"
+    "Lock_Chat"
+    "Lock_English"
+    "Lock_Join"
+    "Map"
+    "Music"
+    "Onservice"
+    "Owners"
+    "Photo"
+    "Plugins"
+    "Reboot_Server"
+    "S2A"
+    "Say_Bye"
+    "Say_Hi"
+    "Set"
+    "Sms"
+    "Stats"
+    "Sticker"
+    "Sudoers"
+    "Tagall"
+    "Tex"
+    "Time"
+    "Webshot"
+    "Welcome"
+    "Xy"
     },
-    sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {175636120,150289672,177178194,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
+    about_text = [[This Is Red Bot
+An advance Administration bot based on SEED
 
-https://github.com/SEEDTEAM/TeleSeed
+List Of Bot Admins:
 
-Our team!
-Alphonse (@Iwals)
-I M /-\ N (@Imandaneshi)
-Siyanew (@Siyanew)
-Rondoozle (@Potus)
-Seyedan (@Seyedan25)
+@Redteam_01_13 [Founder]
 
-Special thanks to:
-Juan Potato
-Siyanew
-Topkecleon
-Vamptacus
+@Redteam_02_Admin1 [Sudo]
+
+@Redteam_02_85 [Sudo]
 
 Our channels:
-English: @TeleSeedCH
-Persian: @IranSeed
+@RedBot_CH
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -368,11 +404,11 @@ Return group id or user id
 !help
 Get commands list
 
-!lock [member|name|bots|leave] 
-Locks [member|name|bots|leaveing] 
+!lock [member|name|bots|ads|tag|join|arabic|leave] 
+Locks [member|name|bots|ads|tag|join|arabic|leaveing] 
 
-!unlock [member|name|bots|leave]
-Unlocks [member|name|bots|leaving]
+!unlock [member|name|bots|ads|tag|join|arabic|leave]
+Unlocks [member|name|bots|ads|tag|join|arabic|leaving]
 
 !set rules [text]
 Set [text] as rules
