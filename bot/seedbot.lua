@@ -208,84 +208,78 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "Add_Bot"
-    "Add-Plugin"
-    "Admin"
-    "All"
-    "Anti_Link"
-    "Anti_Spam"
-    "Anti_Tag"
-    "Arabic_Lock"
-    "Auto_Leave"
-    "Banhammer"
-    "Bin"
-    "Block"
-    "Bot_Number"
-    "Bot_On_Off"
-    "Broadcast"
-    "Calculator"
-    "Chat"
-    "Cpu"
-    "Download_Media"
-    "Echo"
-    "Expire"
-    "Feedback"
-    "Filter"
-    "Fosh"
-    "GPS"
-    "Get"
-    "Get_Plugins"
-    "Gif"
-    "Google"
-    "Google_Image"
-    "Info"
-    "Ingroup"
-    "Inpm"
-    "Inrealm"
-    "Invite"
-    "Leave_Ban"
-    "Link_Pv"
-    "Lock_Chat"
-    "Lock_English"
-    "Lock_Join"
-    "Map"
-    "Music"
-    "Onservice"
-    "Owners"
-    "Photo"
-    "Plugins"
-    "Reboot_Server"
-    "S2A"
-    "Say_Bye"
-    "Say_Hi"
-    "Set"
-    "Sms"
-    "Stats"
-    "Sticker"
-    "Sudoers"
-    "Tagall"
-    "Tex"
-    "Time"
-    "Webshot"
+    "Add_Bot",
+    "Add_Plugin",
+    "Admin",
+    "All",
+    "Anti_Link",
+    "Anti_Spam",
+    "Anti_Tag",
+    "Arabic_Lock",
+    "Auto_Leave",
+    "Banhammer",
+    "Bin",
+    "Bot_Number",
+    "Bot_On_Off",
+    "Broadcast",
+    "Calculator",
+    "Chat",
+    "Cpu",
+    "Download_Media",
+    "Echo",
+    "Expire",
+    "Feedback",
+    "Filter",
+    "Fosh",
+    "GPS",
+    "Get",
+    "Get_Plugins",
+    "Gif",
+    "Google",
+    "Google_Image",
+    "Info",
+    "Ingroup",
+    "Inpm",
+    "Inrealm",
+    "Invite",
+    "Leave_Ban",
+    "Link_Pv",
+    "Lock_Chat",
+    "Lock_English",
+    "Lock_Join",
+    "Map",
+    "Onservice",
+    "Owners",
+    "Photo",
+    "Plugins",
+    "Reboot_Server",
+    "S2A",
+    "Say_Bye",
+    "Say_Hi",
+    "Set",
+    "Sms",
+    "Stats",
+    "Sticker",
+    "Sudoers",
+    "Tagall",
+    "Tex",
+    "Time",
+    "Webshot",
     "Welcome"
-    "Xy"
     },
-    sudo_users = {175636120,150289672,177178194,0,tonumber(our_id)},--Sudo users
+    sudo_users = {175636120,99628088},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[This Is Red Bot
-An advance Administration bot based on SEED
+    about_text = [[This Is Blizzard Bot
 
 List Of Bot Admins:
 
 @Redteam_01_13 [Founder]
 
-@Redteam_02_Admin1 [Sudo]
-
-@Redteam_02_85 [Sudo]
+@Redteam_01_14 [Developer]
 
 Our channels:
-@RedBot_CH
+@Blizzard_TG
 ]],
     help_text_realm = [[
 Realm Commands:
