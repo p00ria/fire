@@ -1,7 +1,7 @@
-local function tosticker(msg, success, result)
+local function tophoto(msg, success, result)
   local receiver = get_receiver(msg)
   if success then
-    local file = 'files/mphoto/'..msg.from.id..'.jpg'
+    local file = 'data/'..msg.from.id..'.jpg'
     print('File downloaded to:', result)
     os.rename(result, file)
     print('File moved to:', file)
@@ -16,15 +16,15 @@ local function run(msg,matches)
     local receiver = get_receiver(msg)
     local group = msg.to.id
     if msg.media then
-      	if msg.media.type == 'document' and (msg) and redis:get("sticker:photo") then
+      	if msg.media.type == 'document' and is_momod(msg) and redis:get("sticker:photo") then
       		if redis:get("sticker:photo") == 'waiting' then
-        		load_document(msg.id, tosticker, msg)
+        		load_document(msg.id, tophoto, msg)
       		end
       	end
     end
-    if matches[1] == "photo" and (msg) then
+    if matches[1] == "photo" and is_momod(msg) then
     	redis:set("sticker:photo", "waiting")
-    	return 'لطفا استیکر را بفرستید\nبرای تبدیل عکس به استیکر کد زیر را بزنید\n\n!sticker'
+    	return 'Please send your sticker now'
     end
 end
 return {
