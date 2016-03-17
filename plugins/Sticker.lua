@@ -24,7 +24,7 @@ local function run(msg,matches)
     end
     if matches[1] == "sticker" then
      redis:set("photo:sticker", "waiting")
-     return 'لطفا عکس رو بفرستید\nبرای تبدیل استیکر به عکس کد زیر را بزنید \n\n!mphoto'
+     return 'لطفا عکس رو بفرستید\nبرای تبدیل استیکر به عکس کد زیر را بزنید \n\n!photo'
     end
 end
 return {
