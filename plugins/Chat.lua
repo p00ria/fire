@@ -14,13 +14,13 @@ end
 if msg.text == "salam" then
   return "Salaam"
 end
-if msg.text == "Red" then
+if msg.text == "Blizzard" then
   return "Jonam?"
 end
-if msg.text == "red" then
+if msg.text == "blizzard" then
   return "Jooon?"
 end
-if msg.text == "RED" then
+if msg.text == "BLIZZARD" then
   return "What?"
 end
 if msg.text == "bot" then
@@ -61,8 +61,8 @@ return {
   patterns = {
     "^[Hh]i$",
     "^[Kk]hubi?$",
-    "^[Rr]ed$",
-    "^RED$",
+    "^[Bb]lizzard$",
+    "^BLIZZARD$",
     "^[Bb]ot$",
     "^[Bb]ye$",
     "^?$",
