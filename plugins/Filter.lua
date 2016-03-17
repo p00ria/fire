@@ -62,9 +62,9 @@ end
 
 local function run(msg, matches)
   local data = load_data(_config.moderation.data)
-  if matches[1] == "ilterlist" then
+  if matches[1] == "filterlist" then
     return list_filter(msg)
-  elseif matches[1] == "ilter" and matches[2] == ">" then
+  elseif matches[1] == "filter" and matches[2] == ">" then
     if data[tostring(msg.to.id)] then
       local settings = data[tostring(msg.to.id)]['settings']
       if not is_momod(msg) then
@@ -76,7 +76,7 @@ local function run(msg, matches)
         return text
       end
     end
-  elseif matches[1] == "ilter" and matches[2] == "+" then
+  elseif matches[1] == "filter" and matches[2] == "+" then
     if data[tostring(msg.to.id)] then
       local settings = data[tostring(msg.to.id)]['settings']
       if not is_momod(msg) then
@@ -88,7 +88,7 @@ local function run(msg, matches)
         return text
       end
     end
-  elseif matches[1] == "ilter" and matches[2] == "-" then
+  elseif matches[1] == "filter" and matches[2] == "-" then
     if data[tostring(msg.to.id)] then
       local settings = data[tostring(msg.to.id)]['settings']
       if not is_momod(msg) then
@@ -100,7 +100,7 @@ local function run(msg, matches)
         return text
       end
     end
-  elseif matches[1] == "ilter" and matches[2] == "?" then
+  elseif matches[1] == "filter" and matches[2] == "?" then
     return get_filter_act(msg, matches[3]:lower())
   else
     if is_sudo(msg) then
@@ -131,8 +131,8 @@ return {
   },
   },
   patterns = {
-    "^[Ff](ilter) (.+) (.*)$",
-    "^[Ff](ilterlist)$",
+    "^[!/]([Ff]ilter) (.+) (.*)$",
+    "^[!/]([Ff]ilterlist)$",
     "(.*)",
   },
   run = run
