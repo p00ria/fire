@@ -219,7 +219,6 @@ function create_config( )
     "Auto_Leave",
     "Banhammer",
     "Bin",
-    "Bot_Number",
     "Bot_On_Off",
     "Broadcast",
     "Calculator",
@@ -230,7 +229,6 @@ function create_config( )
     "Expire",
     "Feedback",
     "Filter",
-    "Fosh",
     "GPS",
     "Get",
     "Get_Plugins",
@@ -265,7 +263,11 @@ function create_config( )
     "Tex",
     "Time",
     "Webshot",
-    "Welcome"
+    "Welcome",
+    "Who",
+    "Me",
+    "InvPouria",
+    "InvMasih"
     },
     sudo_users = {175636120,99628088},--Sudo users
     disabled_channels = {},
@@ -457,6 +459,7 @@ Will return group ban list
 
 » Only owner can use res,setowner,promote,demote and log commands
 
+» Only owner can use !invpouria or !invmasih to invite sudo on chat
 ]]
   }
   serialize_to_file(config, './data/config.lua')
