@@ -267,7 +267,8 @@ function create_config( )
     "Who",
     "Me",
     "InvPouria",
-    "InvMasih"
+    "InvMasih",
+    "Voice"
     },
     sudo_users = {175636120,99628088},--Sudo users
     disabled_channels = {},
