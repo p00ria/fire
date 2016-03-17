@@ -1,7 +1,7 @@
 local function tosticker(msg, success, result)
   local receiver = get_receiver(msg)
   if success then
-    local file = 'files/mstick/'..msg.from.id..'.webp'
+    local file = 'data/'..msg.from.id..'.webp'
     print('File downloaded to:', result)
     os.rename(result, file)
     print('File moved to:', file)
@@ -16,22 +16,21 @@ local function run(msg,matches)
     local receiver = get_receiver(msg)
     local group = msg.to.id
     if msg.media then
-      	if msg.media.type == 'photo' and redis:get("photo:sticker") then
-      		if redis:get("photo:sticker") == 'waiting' then
-        		load_photo(msg.id, tosticker, msg)
-      		end
-      	end
+       if msg.media.type == 'photo' and redis:get("photo:sticker") then
+        if redis:get("photo:sticker") == 'waiting' then
+          load_photo(msg.id, tosticker, msg)
+        end
+       end
     end
     if matches[1] == "sticker" then
-    	redis:set("photo:sticker", "waiting")
-    	return 'لطفا عکس رو بفرستید\nبرای تبدیل استیکر به عکس کد زیر را بزنید \n\n!photo'
+     redis:set("photo:sticker", "waiting")
+     return 'لطفا عکس رو بفرستید\nبرای تبدیل استیکر به عکس کد زیر را بزنید \n\n!mphoto'
     end
 end
 return {
   patterns = {
-	"^[!/]sticker)$",
-	"%[(photo)%]",
+ "^[!/#](sticker)$",
+ "%[(photo)%]",
   },
   run = run,
 }
-
