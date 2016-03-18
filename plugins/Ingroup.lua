@@ -1497,7 +1497,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /help")
       return help()
     end
-    if matches[1] == 'info' and is_momod(msg) then 
+    if matches[1] == 'res' and is_momod(msg) then 
       local cbres_extra = {
         chatid = msg.to.id
       }
@@ -1546,7 +1546,7 @@ return {
   "^[!/]([Ss]etowner) (%d+)$",
   "^[!/]([Ss]etowner)",
   "^[!/]([Oo]wner)$",
-  "^[!/]([Rr]es) (.*)$",
+  "^[!/](res) (.*)$",
   "^[!/]([Ss]etgpowner) (%d+) (%d+)$",-- (group id) (owner id)
   "^[!/]([Uu]nlock) (.*)$",
   "^[!/]([Ss]etflood) (%d+)$",
@@ -1580,7 +1580,7 @@ return {
   "^([Ss]etowner) (%d+)$",
   "^([Ss]etowner)",
   "^([Oo]wner)$",
-  "^([Rr]es) (.*)$",
+  "^(res) (.*)$",
   "^([Ss]etgpowner) (%d+) (%d+)$",-- (group id) (owner id)
   "^([Uu]nlock) (.*)$",
   "^([Ss]etflood) (%d+)$",
