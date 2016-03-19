@@ -1,7 +1,6 @@
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 do
 
-— Check Member
+-- Check Member
 local function check_member_autorealm(cb_extra, success, result)
   local receiver = cb_extra.receiver
   local data = cb_extra.data
@@ -9,7 +8,7 @@ local function check_member_autorealm(cb_extra, success, result)
   for k,v in pairs(result.members) do
     local member_id = v.id
     if member_id ~= our_id then
-      — Group configuration
+      -- Group configuration
       data[tostring(msg.to.id)] = {
         group_type = 'Realm',
         settings = {
@@ -49,7 +48,7 @@ local function check_member_realm_add(cb_extra, success, result)
   for k,v in pairs(result.members) do
     local member_id = v.id
     if member_id ~= our_id then
-      — Group configuration
+      -- Group configuration
       data[tostring(msg.to.id)] = {
         group_type = 'Realm',
         settings = {
@@ -89,7 +88,7 @@ function check_member_group(cb_extra, success, result)
   for k,v in pairs(result.members) do
     local member_id = v.id
     if member_id ~= our_id then
-      — Group configuration
+      -- Group configuration
       data[tostring(msg.to.id)] = {
         group_type = 'Group',
         moderators = {},
@@ -131,9 +130,8 @@ local function check_member_modadd(cb_extra, success, result)
   for k,v in pairs(result.members) do
     local member_id = v.id
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 if member_id ~= our_id then
-      — Group configuration
+      -- Group configuration
       data[tostring(msg.to.id)] = {
         group_type = 'Group',
         moderators = {},
@@ -189,7 +187,7 @@ local function check_member_realmrem(cb_extra, success, result)
   for k,v in pairs(result.members) do
     local member_id = v.id
     if member_id ~= our_id then
-      — Realm configuration removal
+      -- Realm configuration removal
       data[tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
       local realms = 'realms'
@@ -210,7 +208,7 @@ local function check_member_modrem(cb_extra, success, result)
   for k,v in pairs(result.members) do
     local member_id = v.id
     if member_id ~= our_id then
-      — Group configuration removal
+      -- Group configuration removal
       data[tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
       local groups = 'groups'
@@ -224,7 +222,7 @@ local function check_member_modrem(cb_extra, success, result)
     end
   end
 end
-—End Check Member
+--End Check Member
 local function show_group_settingsmod(msg, data, target)
    if not is_momod(msg) then
       return "For moderators only!"
@@ -247,9 +245,7 @@ local function show_group_settingsmod(msg, data, target)
       leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
      end
   local settings = data[tostring(target)]['settings']
-
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
-local text = "Group settings :\n_____________________\n📡lock group name : "..settings.lock_name.."\n📡lock group photo : "..settings.lock_photo.."\n📡lock group member : "..settings.lock_member.."\n📡lock leave : "..settings.leave_ban.."\n📡lock arabic : "..settings.lock_arabic.."\n📡lock english : "..settings.lock_english.."\n📡lock chat : "..settings.lock_chat.."\n📡lock join : "..settings.lock_join.."\n📡lock tag : "..settings.antitag.."\n📡lock link : "..settings.lock_ads.."\n📡flood sensitivity : "..NUM_MSG_MAX.."\n📡Bot protection : "..bots_protection.."\n_____________________\nRedteam"
+local text = "⚙Group settings :\n_____________________\n📡lock group name : "..settings.lock_name.."\n📡lock group photo : "..settings.lock_photo.."\n📡lock group member : "..settings.lock_member.."\n📡lock leave : "..settings.leave_ban.."\n📡lock arabic : "..settings.lock_arabic.."\n📡lock english : "..settings.lock_english.."\n📡lock chat : "..settings.lock_chat.."\n📡lock join : "..settings.lock_join.."\n📡lock tag : "..settings.antitag.."\n📡lock link : "..settings.lock_ads.."\n📡flood sensitivity : "..NUM_MSG_MAX.."\n📡Bot protection : "..bots_protection.."\n_____________________\nRedteam"
   return text
 end
 
@@ -355,7 +351,6 @@ local function unlock_group_english(msg, data, target)
   end
 end
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 local function lock_group_tag(msg, data, target)
   if not is_momod(msg) then
     return "For moderators only!"
@@ -482,7 +477,6 @@ local function lock_group_chat(msg, data, target)
   end
 end
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 local function unlock_group_chat(msg, data, target)
   if not is_momod(msg) then
     return "For moderators only!"
@@ -596,7 +590,6 @@ local function lock_group_membermod(msg, data, target)
   return 'Group members has been locked'
 end
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 local function unlock_group_membermod(msg, data, target)
   if not is_momod(msg) then
     return "For moderators only!"
@@ -668,7 +661,6 @@ local function unlock_group_leave(msg, data, target)
   end
 end
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 local function unlock_group_photomod(msg, data, target)
   if not is_momod(msg) then
     return "For moderators only!"
@@ -693,7 +685,7 @@ local function set_rulesmod(msg, data, target)
   return 'Set group rules to:\n'..rules
 end
 local function modadd(msg)
-  — superuser and admins only (because sudo are always has privilege)
+  -- superuser and admins only (because sudo are always has privilege)
   if not is_admin(msg) then
     return "You're not admin"
   end
@@ -705,7 +697,7 @@ local function modadd(msg)
     chat_info(receiver, check_member_modadd,{receiver=receiver, data=data, msg = msg})
 end
 local function realmadd(msg)
-  — superuser and admins only (because sudo are always has privilege)
+  -- superuser and admins only (because sudo are always has privilege)
   if not is_admin(msg) then
     return "You're not admin"
   end
@@ -716,9 +708,9 @@ local function realmadd(msg)
     receiver = get_receiver(msg)
     chat_info(receiver, check_member_realm_add,{receiver=receiver, data=data, msg = msg}) 
 end
-— Global functions
+--Global functions
 function modrem(msg)
-  — superuser and admins only (because sudo are always has privilege)
+  -- superuser and admins only (because sudo are always has privilege)
   if not is_admin(msg) then
     return "You're not admin"
   end
@@ -731,7 +723,7 @@ function modrem(msg)
 end
 
 function realmrem(msg)
-  — superuser and admins only (because sudo are always has privilege)
+  -- superuser and admins only (because sudo are always has privilege)
   if not is_admin(msg) then
     return "You're not admin"
   end
@@ -786,7 +778,6 @@ local function promote(receiver, member_username, member_id)
   return send_large_msg(receiver, member_username..' has been promoted.')
 end
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 local function promote_by_reply(extra, success, result)
     local msg = result
     local full_name = (msg.from.first_name or '')..' '..(msg.from.last_name or '')
@@ -842,8 +833,8 @@ local function setowner_by_reply(extra, success, result)
 end
 
 local function promote_demote_res(extra, success, result)
-—vardump(result)
-—vardump(extra)
+--vardump(result)
+--vardump(extra)
       local member_id = result.id
       local member_username = "@"..result.username
       local chat_id = extra.chat_id
@@ -862,8 +853,8 @@ local function modlist(msg)
   if not data[tostring(groups)][tostring(msg.to.id)] then
     return 'Group is not added.'
   end
-  — determine if table is empty
-  if next(data[tostring(msg.to.id)]['moderators']) == nil then —fix way
+  -- determine if table is empty
+  if next(data[tostring(msg.to.id)]['moderators']) == nil then --fix way
     return 'No moderator in this group.'
   end
   local i = 1
@@ -876,7 +867,7 @@ local function modlist(msg)
 end
 
 local function callbackres(extra, success, result)
-—vardump(result)
+--vardump(result)
   local user = result.id
   local name = string.gsub(result.print_name, "_", " ")
   local chat = 'chat#id'..extra.chatid
@@ -908,7 +899,6 @@ local function killchat(cb_extra, success, result)
   end
 end
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 local function killrealm(cb_extra, success, result)
   local receiver = cb_extra.receiver
   local chat_id = "chat#id"..result.id
@@ -956,7 +946,7 @@ end
 local function kick_inactive(chat_id, num, receiver)
     local hash = 'chat:'..chat_id..':users'
     local users = redis:smembers(hash)
-    — Get user info
+    -- Get user info
     for i = 1, #users do
         local user_id = users[i]
         local user_info = user_msgs(user_id, chat_id)
@@ -1009,7 +999,6 @@ local function run(msg, matches)
     return autorealmadd(msg)
   end
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 if msg.to.id and data[tostring(msg.to.id)] then
     local settings = data[tostring(msg.to.id)]['settings']
     if matches[1] == 'chat_add_user' then
@@ -1029,7 +1018,7 @@ if msg.to.id and data[tostring(msg.to.id)] then
     end
     if matches[1] == 'chat_del_user' then
       if not msg.service then
-         — return "Are you trying to troll me?"
+         -- return "Are you trying to troll me?"
       end
       local user = 'user#id'..msg.action.user.id
       local chat = 'chat#id'..msg.to.id
@@ -1043,7 +1032,7 @@ if msg.to.id and data[tostring(msg.to.id)] then
       if group_photo_lock == 'yes' then
         local picturehash = 'picture:changed:'..msg.to.id..':'..msg.from.id
         redis:incr(picturehash)
-        —-
+        ---
         local picturehash = 'picture:changed:'..msg.to.id..':'..msg.from.id
         local picprotectionredis = redis:get(picturehash) 
         if picprotectionredis then 
@@ -1071,7 +1060,7 @@ if msg.to.id and data[tostring(msg.to.id)] then
       if group_photo_lock == 'yes' then
         local picturehash = 'picture:changed:'..msg.to.id..':'..msg.from.id
         redis:incr(picturehash)
-        —-
+        ---
         local picturehash = 'picture:changed:'..msg.to.id..':'..msg.from.id
         local picprotectionredis = redis:get(picturehash) 
         if picprotectionredis then 
@@ -1106,9 +1095,7 @@ if msg.to.id and data[tostring(msg.to.id)] then
           local nameprotectionredis = redis:get(namehash) 
           if nameprotectionredis then 
             if tonumber(nameprotectionredis) == 4 and not is_owner(msg) then
-
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
-kick_user(msg.from.id, msg.to.id)
+               kick_user(msg.from.id, msg.to.id)
             end
             if tonumber(nameprotectionredis) ==  8 and not is_owner(msg) then 
               ban_user(msg.from.id, msg.to.id)
@@ -1216,9 +1203,7 @@ kick_user(msg.from.id, msg.to.id)
       if matches[2] == 'about' then
         local data = load_data(_config.moderation.data)
         local target = msg.to.id
-
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
-local about = matches[3]
+        local about = matches[3]
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] has changed group description to ["..matches[3].."]")
         return set_descriptionmod(msg, data, target, about)
       end
@@ -1273,7 +1258,7 @@ local about = matches[3]
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked chat ")
        return lock_group_chat(msg, data, target)
       end
-    if matches[2] == 'leave' then
+       if matches[2] == 'leave' then
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked leaving ")
        return lock_group_leave(msg, data, target)
      end
@@ -1316,9 +1301,7 @@ local about = matches[3]
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked bots ")
         return unlock_group_bots(msg, data, target)
       end
-
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
-if matches[2] == 'ads' then
+      if matches[2] == 'ads' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked ads ")
         return unlock_group_ads(msg, data, target)
        end
@@ -1357,19 +1340,18 @@ if matches[2] == 'ads' then
       return show_group_settingsmod(msg, data, target)
     end  
 
- — if matches[1] == 'public' then
-    —local target = msg.to.id
-    —if matches[2] == 'yes' then
-    —  savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: public")
-      —return set_public_membermod(msg, data, target)
-  —  end
-—    if matches[2] == 'no' then
-  —    savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: not public")
-  —    return unset_public_membermod(msg, data, target)
-  —  end
- — end
+ -- if matches[1] == 'public' then
+    --local target = msg.to.id
+    --if matches[2] == 'yes' then
+    --  savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: public")
+      --return set_public_membermod(msg, data, target)
+  --  end
+--    if matches[2] == 'no' then
+  --    savelog(msg.to.id, name_log.." ["..msg.from.id.."] set group to: not public")
+  --    return unset_public_membermod(msg, data, target)
+  --  end
+ -- end
 
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
 if matches[1] == 'newlink' and not is_realm(msg) then
       if not is_momod(msg) then
         return "For moderators only!"
@@ -1460,7 +1442,7 @@ if matches[1] == 'newlink' and not is_realm(msg) then
         chat_info(receiver, cleanmember, {receiver=receiver})
       end
       if matches[2] == 'modlist' then
-        if next(data[tostring(msg.to.id)]['moderators']) == nil then —fix way
+        if next(data[tostring(msg.to.id)]['moderators']) == nil then --fix way
           return 'No moderator in this group.'
         end
         local message = '\nList of moderators for ' .. string.gsub(msg.to.print_name, '_', ' ') .. ':\n'
@@ -1471,9 +1453,7 @@ if matches[1] == 'newlink' and not is_realm(msg) then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned modlist")
       end
       if matches[2] == 'rules' then
-
-🔱 Red Bot 🔱, [۱۹.۰۳.۱۶ ۰۹:۲۹]
-local data_cat = 'rules'
+        local data_cat = 'rules'
         data[tostring(msg.to.id)][data_cat] = nil
         save_data(_config.moderation.data, data)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned rules")
@@ -1528,7 +1508,7 @@ local data_cat = 'rules'
       return res_user(username,  callbackres, cbres_extra)
     end
     if matches[1] == 'kickinactive' then
-      —send_large_msg('chat#id'..msg.to.id, 'I\'m in matches[1]')
+      --send_large_msg('chat#id'..msg.to.id, 'I\'m in matches[1]')
       if not is_momod(msg) then
         return 'Only a moderator can kick inactive users'
       end
@@ -1568,11 +1548,11 @@ return {
   "^[!/]([Ss]etowner)",
   "^[!/]([Oo]wner)$",
   "^[!/](res) (.*)$",
-  "^[!/]([Ss]etgpowner) (%d+) (%d+)$",— (group id) (owner id)
+  "^[!/]([Ss]etgpowner) (%d+) (%d+)$",-- (group id) (owner id)
   "^[!/]([Uu]nlock) (.*)$",
   "^[!/]([Ss]etflood) (%d+)$",
   "^[!/]([Ss]ettings)$",
- — "^[!/]([Pp]ublic) (.*)$",
+ -- "^[!/]([Pp]ublic) (.*)$",
   "^[!/]([Mm]odlist)$",
   "^[!/]([Nn]ewlink)$",
   "^[!/]([Ll]ink)$",
@@ -1602,11 +1582,11 @@ return {
   "^([Ss]etowner)",
   "^([Oo]wner)$",
   "^(res) (.*)$",
-  "^([Ss]etgpowner) (%d+) (%d+)$",— (group id) (owner id)
+  "^([Ss]etgpowner) (%d+) (%d+)$",-- (group id) (owner id)
   "^([Uu]nlock) (.*)$",
   "^([Ss]etflood) (%d+)$",
   "^([Ss]ettings)$",
-  —"^([Pp]ublic) (.*)$",
+  --"^([Pp]ublic) (.*)$",
   "^([Mm]odlist)$",
   "^([Nn]ewlink)$",
   "^([Ll]ink)$",
