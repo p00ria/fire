@@ -1,11 +1,3 @@
---[[
-
-#
-#     @GPMOD
-#   @Dragon_Born
-#      
-
-]]
 do
 function run_bash(str)
     local cmd = io.popen(str)
@@ -78,9 +70,9 @@ function run(msg, matches)
 	  text = text..'\nغروب آفتاب: '..data.Sunset
 	  text = text..'\nاذان مغرب: '..data.Maghrib
 	  text = text..'\nعشاء : '..data.Isha
-	  text = text..'\n\nred team'
+	  text = text..'\n\nFireTeam'
 	if string.match(text, '0') then text = string.gsub(text, '0', '۰') end
-	if string.match(text, '1')am then text = string.gsub(text, '1', '۱') end
+	if string.match(text, '1') then text = string.gsub(text, '1', '۱') end
 	if string.match(text, '2') then text = string.gsub(text, '2', '۲') end
 	if string.match(text, '3') then text = string.gsub(text, '3', '۳') end
 	if string.match(text, '4') then text = string.gsub(text, '4', '۴') end
@@ -93,7 +85,10 @@ function run(msg, matches)
 end
 
 return {
-  patterns = {"^[/!][Pp]raytime (.*)$","^[/!](praytime)$"}, 
+  patterns = {
+      "^[/!][Pp]raytime (.*)$",
+      "^[/!](praytime)$"
+      }, 
   run = run 
 }
 
