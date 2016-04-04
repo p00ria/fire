@@ -270,7 +270,7 @@ function create_config( )
     "InvMasih",
     "Voice"
     },
-    sudo_users = {175636120,99628088},--Sudo users
+    sudo_users = {175636120,198794027},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[This Is Blizzard Bot
@@ -279,7 +279,7 @@ List Of Bot Admins:
 
 @Redteam_01_13 [Founder]
 
-@Redteam_01_14 [Developer]
+@SHO_OKER_ADMIN [Sudo]
 
 Our channels:
 @Blizzard_TG
